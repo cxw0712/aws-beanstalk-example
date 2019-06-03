@@ -1,18 +1,19 @@
 version: 0.2
-phases:
-	pre_build:
-		commands:
-		- echo "Entered the pre_build phases"
-	build:
-		commands:
-		- echo "Entered the build phases"
-		- mvn clean prepare-package war:exploded
-	post_build:
-		commands: 
-		- echo "Entered the post_build phases"
-		- rm -r deploy/
-		- echo "Move target/deploy to root dir"
-		- mv target/deploy ./
+
+phases: 
+    pre_build:
+        commands:
+        - echo "Entered the pre_build phases"
+    build:
+        commands:
+        - echo "Entered the build phases"
+        - mvn clean prepare-package war:exploded
+    post_build:
+        commands: 
+        - echo "Entered the post_build phases"
+        - rm -r deploy/
+        - echo "Move target/deploy to root dir"
+        - mv target/deploy ./
 artifacts:
-	files:
-		- deploy/**/*
+    files:
+        - deploy/**/*
