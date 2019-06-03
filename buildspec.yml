@@ -11,7 +11,7 @@ phases:
     post_build:
         commands: 
         - echo "Entered the post_build phases"
-        - rm -r deploy/
+        - rm -rf deploy/
         - echo "Move target/deploy to root dir"
         - mv target/deploy ./
 artifacts:
