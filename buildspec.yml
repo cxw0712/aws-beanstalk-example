@@ -13,4 +13,5 @@ phases:
         - echo "Entered the post_build phases"
 artifacts:
     files:
-        - target/aws-elastic-beanstalk-example-0.0.1-SNAPSHOT.war
+        - '**/*'
+    base-directory: 'target/aws-elastic-beanstalk-example-0.0.1-SNAPSHOT'
