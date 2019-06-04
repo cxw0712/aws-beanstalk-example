@@ -7,13 +7,10 @@ phases:
     build:
         commands:
         - echo "Entered the build phases"
-        - mvn clean prepare-package war:exploded
+        - mvn clean install -DskipTests
     post_build:
         commands: 
         - echo "Entered the post_build phases"
-        - rm -rf deploy/
-        - echo "Move target/deploy to root dir"
-        - mv target/deploy ./
 artifacts:
     files:
-        - deploy/**/*
+        - target/aws-elastic-beanstalk-example-0.0.1-SNAPSHOT.war
